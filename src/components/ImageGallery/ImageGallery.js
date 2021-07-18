@@ -51,6 +51,7 @@ export default class ImageGallery extends React.Component {
                 webformatURL={image.webformatURL}
                 largeImageURL={image.largeImageURL}
                 tags={image.tags}
+                onClick={this.props.toggleModal}
               />
             ))}
           </ul>
