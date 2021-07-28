@@ -16,12 +16,18 @@ export default class Modal extends React.Component {
     }
   };
 
+  handleBackdropClick = (event) => {
+    if (event.currentTarget === event.target) {
+      this.props.onClose();
+    }
+  };
+
   render() {
     return (
-      <div className={css.overlay} onClick={this.props.onClose}>
+      <div className={css.overlay} onClick={this.handleBackdropClick}>
         <div className={css.modal}>
           {this.props.children}
-          <img src="{this.props.srcForModal}" alt="{this.props.altForModal}" />
+          <img src={this.props.src} alt={this.props.altForModal} />
         </div>
       </div>
     );

@@ -1,17 +1,12 @@
 import React from "react";
 import css from "./Button.module.css";
 
-function Button() {
-  return (
-    <button type="button" className={css.Button}>
-      Load more
-    </button>
-  );
+export default class Button extends React.Component {
+  render() {
+    return (
+      <button type="button" className={css.button} onClick={this.props.onClick}>
+        Load more
+      </button>
+    );
+  }
 }
-
-export default Button;
-
-// window.scrollTo({
-//     top: document.documentElement.scrollHeight,
-//     behavior: 'smooth',
-//   });

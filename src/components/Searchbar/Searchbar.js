@@ -1,8 +1,5 @@
 import React from "react";
 import css from "./Searchbar.module.css";
-// import { toast } from 'react-toastify';
-//21731016-f00a62a1d829b8e9d99c92f14
-//https://pixabay.com/api/?q=что_искать&page=1&key=f00a62a1d829b8e9d99c92f14&image_type=photo&orientation=horizontal&per_page=12
 
 export default class Searchbar extends React.Component {
   state = {
@@ -19,7 +16,6 @@ export default class Searchbar extends React.Component {
     event.preventDefault();
 
     if (this.state.imageName.trim() === "") {
-      // toast.error('Enter something in the search box!');
       alert("Enter something in the search box!");
       return;
     }
@@ -38,6 +34,7 @@ export default class Searchbar extends React.Component {
 
           <input
             className={css.searchFormInput}
+            value={this.state.imageName}
             type="text"
             autoComplete="off"
             autoFocus
